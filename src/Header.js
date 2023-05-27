@@ -1,26 +1,21 @@
 import React,{useContext} from "react";
-import '../public/styles/header.css';
 import themeContext from "./MainContext";
+import Home from "./Home";
 
 export default function Header(props){
 
     
     
         const contextVal = useContext(themeContext);
-        return(<header>
-            
-           <div className="header-top"></div>
-            <nav>
-                <ul>
-                    
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a>{contextVal}</a></li>
-                    
-                </ul>
-            </nav>
-        </header>);
+        return(<> <nav className="flex-row justify-between text-white">
+        <div className="name">Bobby</div>
+        <input type="checkbox" id="menu-toggle" />
+        <label htmlFor="menu-toggle" className="menu-icon">&#9776;</label>
+        <div className="menu-bar">
+            <div className="list-item"><a href="#exp">Work </a></div>
+            <div className="list-item"> <a href="#skills">Skills</a></div>
+            <div className="list-item"><a href="#contact">Contact</a></div>
+        </div>
+    </nav></>)
     
 }

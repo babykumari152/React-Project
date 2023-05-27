@@ -20,6 +20,17 @@ module.exports = {
     }, {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: '[name].[hash].[ext]', // Rename the file with a hash for cache-busting
+            outputPath: 'images/', // Output path for the images
+            publicPath: '/' // Public path to be used in the HTML file
+          }
+        },
       }],
      
   },
